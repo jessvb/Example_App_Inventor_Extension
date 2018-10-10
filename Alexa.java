@@ -34,7 +34,8 @@ import android.util.Log;
     iconName = "appengine/src/com/google/appinventor/images/alexa.png")
 @SimpleObject(external = true)
 public class Alexa extends AndroidNonvisibleComponent
-    implements Component, OnCloudDBDataChangedListener {
+    implements Component {
+    //, OnCloudDBDataChangedListener { // this is for the actual implementation
   public static final int VERSION = 1;
   private ComponentContainer container;
   // todo: change to false
@@ -68,7 +69,7 @@ public class Alexa extends AndroidNonvisibleComponent
       Log.d(LOG_TAG, "adding to clouddbchanged listeners. this: " + this +
                          "; form: " + form);
     }
-    form.registerForOnCloudDBDataChanged(this);
+    //form.registerForOnCloudDBDataChanged(this); // this is for the actual implementation
 
     // Create a CloudDB component to talk to the redis database (& connect to
     // Amazon Alexa)
